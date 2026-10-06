@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="crimson" data-density="comfortable">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Smexstore | Esports Tournaments, Teams and Game ID Marketplace</title>
+    <meta
+      name="description"
+      content="Smexstore is a gaming community for esports tournaments, team rosters, a game ID marketplace and rank boosting services."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1a080a" id="meta-theme-color" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph. __SITE_URL__ is replaced at build time from VITE_SITE_URL. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Smexstore" />
+    <meta property="og:title" content="Smexstore | Esports Tournaments, Teams and Game ID Marketplace" />
+    <meta
+      property="og:description"
+      content="Smexstore is a gaming community for esports tournaments, team rosters, a game ID marketplace and rank boosting services."
+    />
+    <meta property="og:url" content="__SITE_URL__" />
+    <meta property="og:image" content="__SITE_URL__/smexstore-logo.png" />
+    <meta property="og:image:alt" content="Smexstore logo" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Smexstore | Esports Tournaments, Teams and Game ID Marketplace" />
+    <meta
+      name="twitter:description"
+      content="Smexstore is a gaming community for esports tournaments, team rosters, a game ID marketplace and rank boosting services."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/smexstore-logo.png" />
+
+    <!-- Icons use the official logo asset: public/smexstore-logo.png -->
+    <link rel="icon" type="image/png" href="/smexstore-logo.png" />
+    <link rel="apple-touch-icon" href="/smexstore-logo.png" />
+
+    <link rel="canonical" href="__SITE_URL__" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Smexstore",
+        "url": "__SITE_URL__",
+        "logo": "__SITE_URL__/smexstore-logo.png"
+      }
+    </script>
+
+    <!-- Paint the correct background before any CSS loads, so there is no white flash -->
+    <style>
+      html { background-color: #1a080a; }
+      html[data-theme="midnight"] { background-color: #090c15; }
+    </style>
+
+    <!-- Apply saved theme and density before first paint -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var theme = localStorage.getItem('esports_theme');
+          if (theme !== 'midnight' && theme !== 'crimson') theme = 'crimson';
+          root.setAttribute('data-theme', theme);
+          var meta = document.getElementById('meta-theme-color');
+          if (meta) meta.setAttribute('content', theme === 'midnight' ? '#090c15' : '#1a080a');
+
+          var density = localStorage.getItem('esports_density');
+          if (density !== 'compact' && density !== 'comfortable' && density !== 'spacious') density = 'comfortable';
+          root.setAttribute('data-density', density);
+        } catch (e) {
+          root.setAttribute('data-theme', 'crimson');
+          root.setAttribute('data-density', 'comfortable');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Smexstore needs JavaScript enabled to run.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

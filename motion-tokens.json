@@ -1,0 +1,19 @@
+{
+  "duration": { "instant": "100ms", "fast": "200ms", "base": "280ms", "slow": "450ms" },
+  "easing": {
+    "standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "enter": "cubic-bezier(0.05, 0.7, 0.1, 1)",
+    "exit": "cubic-bezier(0.3, 0, 0.8, 0.15)",
+    "signature": "cubic-bezier(0.22, 1, 0.36, 1)"
+  },
+  "distance": { "xs": "4px", "sm": "8px", "md": "16px", "lg": "24px" },
+  "stagger": { "step": "40ms", "maxItems": 8 },
+  "rules": {
+    "signatureEasing": "One only. A smooth settle with no overshoot. No springs or bounces.",
+    "durationsFromScaleOnly": true,
+    "exitsFasterThanEntrances": "Exits use fast (200ms). Entrances use base (280ms).",
+    "animatedProperties": ["transform", "opacity", "clip-path (menu sheet and theme reveal only)"],
+    "neverAnimate": ["width", "height", "top", "left", "margin", "padding", "box-shadow glow", "cursor-following effects", "scroll-jacking"],
+    "reducedMotion": "No travel, scale or reveal. State changes are instant."
+  }
+}
