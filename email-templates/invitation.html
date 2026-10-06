@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <title>{{INVITE_SUBJECT}}</title>
+    <!--[if mso]>
+      <style>table, td, a { font-family: Arial, sans-serif !important; }</style>
+    <![endif]-->
+    <style>
+      body { margin: 0; padding: 0; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      table { border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; }
+      img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+      a { color: #ff7a8f; }
+      @media only screen and (max-width: 620px) {
+        .container { width: 100% !important; }
+        .px { padding-left: 20px !important; padding-right: 20px !important; }
+        .h1 { font-size: 24px !important; line-height: 30px !important; }
+        .btn-cell, .btn-link { display: block !important; width: 100% !important; box-sizing: border-box; }
+      }
+    </style>
+  </head>
+
+  <body style="margin:0;padding:0;background-color:#1a080a;">
+    <!-- Preheader: shown in the inbox preview, hidden in the body -->
+    <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+      {{INVITE_PREHEADER}}
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1a080a;">
+      <tr>
+        <td align="center" style="padding:32px 12px;">
+
+          <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#260c0f;border:1px solid #4a191e;border-top:3px solid #e01b3c;">
+
+            <!-- Logo: the official Smexstore logo, unmodified. Set height only; width follows the asset. -->
+            <tr>
+              <td class="px" align="left" style="padding:28px 40px 20px 40px;">
+                <a href="{{SITE_URL}}" style="text-decoration:none;">
+                  <img src="{{LOGO_URL}}" alt="Smexstore" height="40" style="display:block;height:40px;width:auto;max-width:100%;" />
+                </a>
+              </td>
+            </tr>
+
+            <!-- Heading -->
+            <tr>
+              <td class="px" style="padding:8px 40px 0 40px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+                <p style="margin:0 0 8px 0;font-size:12px;line-height:16px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:#ff7a8f;">
+                  {{INVITE_KIND}}
+                </p>
+                <h1 class="h1" style="margin:0;font-size:28px;line-height:34px;letter-spacing:-0.02em;font-weight:700;color:#fceeed;">
+                  {{INVITE_HEADLINE}}
+                </h1>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td class="px" style="padding:20px 40px 8px 40px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:26px;color:#fceeed;">
+                <p style="margin:0 0 16px 0;">Hello {{RECIPIENT_NAME}},</p>
+                <p style="margin:0 0 16px 0;">{{INVITE_MESSAGE}}</p>
+                <p style="margin:0;color:#ba8f92;">Invited by {{SENDER_NAME}}.</p>
+              </td>
+            </tr>
+
+            <!-- Details block. Remove the whole row if there are no details to show. -->
+            <tr>
+              <td class="px" style="padding:16px 40px 8px 40px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#331216;border:1px solid #4a191e;border-left:3px solid #e01b3c;">
+                  <tr>
+                    <td style="padding:16px 20px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;line-height:24px;color:#fceeed;">
+                      <span style="color:#ba8f92;">{{DETAIL_LABEL_1}}</span><br />
+                      <strong>{{DETAIL_VALUE_1}}</strong>
+                      <br /><br />
+                      <span style="color:#ba8f92;">{{DETAIL_LABEL_2}}</span><br />
+                      <strong>{{DETAIL_VALUE_2}}</strong>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA: squared button, not a pill. Bulletproof for Outlook via VML. -->
+            <tr>
+              <td class="px" align="left" style="padding:24px 40px 8px 40px;">
+                <!--[if mso]>
+                  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" href="{{CTA_URL}}" style="height:48px;v-text-anchor:middle;width:240px;" fillcolor="#e01b3c" stroke="f">
+                    <w:anchorlock xmlns:w="urn:schemas-microsoft-com:office:word"/>
+                    <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">{{CTA_LABEL}}</center>
+                  </v:rect>
+                <![endif]-->
+                <!--[if !mso]><!-- -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td class="btn-cell" align="center" bgcolor="#e01b3c" style="background-color:#e01b3c;border-radius:4px;">
+                      <a class="btn-link" href="{{CTA_URL}}" style="display:inline-block;padding:14px 28px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:4px;text-align:center;">
+                        {{CTA_LABEL}}
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <!--<![endif]-->
+              </td>
+            </tr>
+
+            <!-- Fallback link -->
+            <tr>
+              <td class="px" style="padding:12px 40px 28px 40px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:13px;line-height:20px;color:#ba8f92;">
+                If the button does not work, copy this link into your browser:<br />
+                <a href="{{CTA_URL}}" style="color:#ff7a8f;word-break:break-all;">{{CTA_URL}}</a>
+              </td>
+            </tr>
+
+            <!-- Footer / legal -->
+            <tr>
+              <td class="px" style="padding:20px 40px 28px 40px;border-top:1px solid #4a191e;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:12px;line-height:19px;color:#ba8f92;">
+                <p style="margin:0 0 10px 0;">
+                  You received this email because {{SENDER_NAME}} invited {{RECIPIENT_EMAIL}} to Smexstore.
+                  If you were not expecting it, you can ignore this message and no account will be created.
+                </p>
+                <p style="margin:0 0 10px 0;">
+                  <a href="{{SITE_URL}}/privacy" style="color:#ff7a8f;">Privacy Policy</a>
+                  &nbsp;|&nbsp;
+                  <a href="{{SITE_URL}}/terms" style="color:#ff7a8f;">Terms and Conditions</a>
+                </p>
+                <p style="margin:0;">
+                  &copy; {{YEAR}} Smexstore. All rights reserved.
+                  <!-- Add the sender's postal address here if your mail provider or local law requires one. -->
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

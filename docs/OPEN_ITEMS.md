@@ -1,0 +1,19 @@
+# Open Items and Unresolved Specifications
+
+This document tracks items that are unspecified, marked TBD, or awaiting design-system inputs in `project building prompt.md` (Section 7). For each item, the safest minimal option implemented in this code is detailed below along with corresponding `TODO` references.
+
+---
+
+| ID | Item | Needed from User | Safest Minimal Option Implemented | Code Location / TODO |
+|---|---|---|---|---|
+| **NEW-01** | Design system values | Confirm hex codes. | Base Crimson and Midnight hex values kept as supplied; placeholder comments removed. Derived tokens (hover, soft fills, foreground tints) are `color-mix` blends of those same values. Midnight filled buttons use a darkened accent so white text meets contrast. | `src/styles/tokens.css` |
+| **NEW-04** | Official logo file | Provide `smexstore-logo.png`. | Not included in the uploaded archive. All surfaces reference `/smexstore-logo.png`; add the file to `public/`. No substitute logo was created. | `public/`, `src/components/brand/BrandLogo.tsx` |
+| **NEW-05** | Phone number, social image, analytics ID, domain | Real values. | None invented. `VITE_SITE_URL` defaults to `https://smexstore.com` until a real domain is set. | `docs/DEPLOY.md` |
+| **NEW-02** | Is Crimson Light or Dark? | Clarification on whether Crimson has a light background or dark background in the official system. | The architecture applies `data-theme="crimson"` as default and `data-theme="midnight"` as alternate, switching custom properties. The toggle is fully operational. | `src/hooks/useTheme.tsx`, `index.html` |
+| **NEW-03** | Success / Error / Badge Colours | Official system tokens for success/error and badge differentiation for 'Good Deal' vs 'Hot'. | Safely defined `--color-success` and `--color-error` placeholders. 'Good Deal' and 'Hot' badges are differentiated through semantic labels, borders, and structural iconography without introducing off-palette colours. | `src/components/common/Badge.tsx` |
+| **TBD-01** | Meaning of "2 admins" & exact admin screens | Whether "2 admins" means a fixed account quota or distinct administrative tiers, plus exact screens needed. | Implemented role-based gating with `role: 'normal_user' \| 'admin'`. Provided an `/admin` dashboard with marketplace moderation and platform overview metrics. | `src/components/layout/RoleGuard.tsx`, `src/pages/admin/AdminDashboardPage.tsx` |
+| **TBD-02** | Payments Architecture | In-app payment gateway vs off-platform contact/escrow. | Built as contact-reveal and booking requests as specified in FR-041 and UX-006. In-app checkout marked out of scope. | `src/pages/MarketplaceDetailPage.tsx`, `src/pages/RankBoostingPage.tsx` |
+| **TBD-03** | Rank-Boosting Package Provider Origin | Whether boosting packages are entered by platform admins, verified third-party partners, or general users. | Modeled with a `providerDetails` schema and booking status pipeline. Browsing and booking flow implemented. | `src/types/rankPackage.ts`, `src/pages/RankBoostingPage.tsx` |
+| **TBD-04** | Email Verification Restriction Scope | What features are specifically blocked when `user.emailVerified === false`. | The safest minimal option allows unverified users to browse tournaments, teams, and marketplace, but gates mutating actions (creating a listing, booking a boost, joining a team) behind email verification warnings. | `src/pages/CreateListingPage.tsx`, `src/pages/TeamsPage.tsx` |
+| **TBD-05** | Formal Accessibility Standard | Formal target level (e.g. WCAG 2.2 AA). | Strict semantic HTML, explicit labels, keyboard focus rings using `--color-accent`, ARIA switch roles, and complete `prefers-reduced-motion` compliance. | Sitewide |
+| **TBD-06** | Superseded Emerald/Teal Palette | Confirmed superseded by DualSpace Crimson + Midnight. | No emerald, teal, gradients, neon, or glows are included anywhere. | `src/styles/tokens.css`, `src/styles/global.css` |

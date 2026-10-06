@@ -1,0 +1,21 @@
+{{INVITE_KIND}}
+{{INVITE_HEADLINE}}
+
+Hello {{RECIPIENT_NAME}},
+
+{{INVITE_MESSAGE}}
+
+Invited by {{SENDER_NAME}}.
+
+{{DETAIL_LABEL_1}}: {{DETAIL_VALUE_1}}
+{{DETAIL_LABEL_2}}: {{DETAIL_VALUE_2}}
+
+{{CTA_LABEL}}: {{CTA_URL}}
+
+You received this email because {{SENDER_NAME}} invited {{RECIPIENT_EMAIL}} to Smexstore.
+If you were not expecting it, ignore this message and no account will be created.
+
+Privacy Policy: {{SITE_URL}}/privacy
+Terms and Conditions: {{SITE_URL}}/terms
+
+(c) {{YEAR}} Smexstore. All rights reserved.
