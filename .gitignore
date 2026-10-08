@@ -1,5 +1,9 @@
 node_modules
 dist
+*.local
 .env
 .env.*
 !.env.example
+.DS_Store
+*.log
+email-templates/preview.html
